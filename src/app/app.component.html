@@ -1,0 +1,217 @@
+<header>
+  <nav class="navbar navbarCustom navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="#"><img src="../assets/img/games.png" width="45px"></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Browse Games</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Support</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Information</a></li>
+              <li><a href="#">Payment</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search">
+              <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="payInfo">
+  <h1>Pay what you want for the Divinity Bundle ($32 value!)</h1>
+    <div class="flex-container">
+      <div id="supportTXT" class="flex-item">Support Larian Studios</div>
+      <div id="playTXT" class="flex-item">Play Divinity 2: DC before release</div>
+      <div id="getTXT" class="flex-item">Get DRM-free games with goodies</div>
+      <div id="timeTXT" class="flex-item"><currentTime></currentTime></div>
+    </div> 
+</section>
+<section class="payGames">
+  <div class="payGamesContent">
+    <div class="payGamesBackground">
+      <div class="divinityGame">
+        <img class="colorFilter" src="../assets/img/logo-active.png" alt="diving divinity">
+        <hr>
+          <p class="gameText">Divine Divinity (normal price $5.99)<br><b>with 6 goodies and 4 language versions</b></p>
+        <hr>
+          <p class="gameInfoText"><span class="priceAbove">Below average</span></p>
+      </div>
+      <div id="cross">
+        <img src="../assets/img/cross.png" alt="cross">
+      </div>
+      <div class="divinityGame">
+        <img [ngClass]="simpleSlider.onUpdate?.from > 7.66 || simpleSlider.onUpdate == -1 ? 'colorFilter' : 'greyFilter'" src="../assets/img/logo-active--silver.png" alt="beyond divinity">
+          <hr>
+        <p class="gameText">Divine Divinity (normal price $5.99) <br> <b>with 6 goodies and 4 language versions</b></p>
+          <hr>
+        <p class="gameInfoText"><span class="priceAbove" [ngClass]="simpleSlider.onUpdate?.from > 7.66 || simpleSlider.onUpdate == -1 ? 'priceAbove' : 'priceUnder'">Above average (from $7.67)</span></p>
+      </div>
+      <div class="divinityGame">
+        <img [ngClass]="simpleSlider.onUpdate?.from > 18.30 || simpleSlider.onUpdate == -1 ? 'colorFilter' : 'greyFilter'" src="../assets/img/logo-new-active.png" alt="divinity II">
+          <hr>
+        <p class="gameText">Divinity 2 (preorder, normal price $19.99) <br> <b>with 9 goodies and 7 language versions</b></p>
+          <hr>
+        <p class="gameInfoText"><span class="priceAbove" [ngClass]="simpleSlider.onUpdate?.from > 18.30 || simpleSlider.onUpdate == -1 ? 'priceAbove' : 'priceUnder'">Top suporter (from $18.31)</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="payRange">
+  <div class="rangeContainer">
+    <div class="addPrice" *ngIf='simpleSlider.onUpdate?.from >= 0' >
+      <span>
+        Add price ($):
+        <input [value]="simpleSlider.onUpdate.from" (input)="simpleSlider.onUpdate.from=$event.target.value && from=$event.target.value">
+      <button id="checkout" (click)='addGames(simpleSlider.onUpdate.from)'>Checkout now</button>
+      </span>
+    </div>
+    <div class="addPrice"  *ngIf='simpleSlider.onUpdate == -1'>
+      <span>
+        Add price ($):
+        <input disabled>
+      <button id="checkout" (click)='addGames(from)'>Checkout now</button>
+      </span>
+    </div>
+    <div class="rangeSlider">
+    <span class="allRange firstRange">$7.67 (Average)</span>
+    <span class="allRange secondRange">$18.31 (Top 10%)</span>
+    <ion-range-slider [min]="min" [max]="max" [step]="step" [from]="from" [prefix]="prefix" (onChange)="update(simpleSlider, $event)"></ion-range-slider>
+    </div>
+  </div> 
+</section>
+<section class="gamesSold">
+    <div class="col-sm-12 col-md-8">
+      <div class="gamesSoldTitle"><span>Goodies available for free with Divinity Bundle</span></div>
+      <div class="extraInfo">
+          <img src="../assets/img/music.png" alt="music">
+          <p class=""><b>4 soundtracks</b></p>
+          <p class="">Over 3 hours of award winning music from all 3 games.</p>
+      </div>
+      <div class="extraInfo">
+          <img src="../assets/img/note.png" alt="note">
+          <p class=""><b>2 short stories</b></p>
+          <p class="">Prequel story for Divine Divinity and Beyond Divinity novella.</p>
+      </div>
+      <div class="extraInfo">
+          <img src="../assets/img/book.png" alt="book">
+          <p class=""><b>Divinity 2 - Dev Journal</b></p>
+          <p class="">144 pages long book, detailing story and art of Divinity 2.</p>
+      </div>
+      <div class="extraInfo">
+          <img src="../assets/img/film.png" alt="film">
+          <p class=""><b>Making of Divinity 2</b></p>
+          <p class="">40 minutes long, profesional documentary about the development of Divinity 2.</p>
+      </div>
+      <div class="extraInfo">
+          <img src="../assets/img/mac.png" alt="mac">
+          <p class=""><b>7 wallpapers</b></p>
+          <p class="">Beatifull, hand crafted HD wallpepers with Divine, Beyond and Divinity 2 art.</p>
+      </div>
+      <div class="extraInfo">
+          <img src="../assets/img/file.png" alt="file">
+          <p class=""><b>...and more</b></p>
+          <p class="">3 manuals, 56 artworks, 5 avatars, Beyond Divinity game-guide.</p>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <div class="gamesSoldTitle"><span>Games sold so far</span></div>
+      <div class="countNumber">
+        {{countGames}}
+      </div>
+      <div>
+        <p *ngIf="countGames < 120000">
+          <b>Reach 
+            <span *ngIf="countGames < 15000">15.000</span>
+            <span *ngIf="countGames < 25000 && countGames >= 15000">25.000</span>
+            <span *ngIf="countGames < 50000 && countGames >= 25000">50.000</span>
+            <span *ngIf="countGames < 80000 && countGames >= 50000">80.000</span>
+            <span *ngIf="countGames < 120000 && countGames >= 80000">120.000</span>
+            ...</b>
+          <br>...to unlock exclusive, never before seen, trailer from Divinity: Original Sin.
+        </p>
+      </div>
+      <div align="center">
+          <div class="accessImg" *ngIf="countGames < 15000"><span class="filePercent">{{countGames/15000*100 | number: 0}}%</span></div>
+          <div class="accessImg" *ngIf="countGames < 25000 && countGames >= 15000"><span class="filePercent">{{countGames/25000*100 | round }}%</span></div>
+          <div class="accessImg" *ngIf="countGames < 50000 && countGames >= 25000"><span class="filePercent">{{countGames/50000*100 | round }}%</span></div>
+          <div class="accessImg" *ngIf="countGames < 80000 && countGames >= 50000"><span class="filePercent">{{countGames/80000*100 | round }}%</span></div>
+          <div class="accessImg" *ngIf="countGames < 120000 && countGames >= 80000"><span class="filePercent">{{countGames/120000*100 | round }}%</span></div>
+          <div class="accessImg" *ngIf="countGames >= 120000"><span class="filePercent">Complete</span></div>
+          <span *ngIf="countGames >= 15000">
+            <div id="boxFilm1" class="boxFilm" *ngIf="showHideFilm">
+              <a href="#"><img src="../assets/img/thumbnail.png" alt="file"></a>
+            </div>
+          </span>
+          <span *ngIf="countGames >= 25000">
+            <div id="boxFilm2" class="boxFilm" *ngIf="showHideFilm2">
+              <a href="#"><img src="../assets/img/thumbnail2.png" alt="file"></a>
+            </div>
+          </span>
+          <span *ngIf="countGames >= 50000">
+            <div id="boxFilm3" class="boxFilm" *ngIf="showHideFilm3">
+              <a href="#"><img src="../assets/img/thumbnail3.png" alt="file"></a>
+            </div>
+          </span>
+          <span *ngIf="countGames >= 80000">
+            <div id="boxFilm4" class="boxFilm" *ngIf="showHideFilm4">
+              <a href="#"><img src="../assets/img/thumbnail4.png" alt="file"></a>
+            </div>
+          </span>
+          <span *ngIf="countGames >= 120000">
+            <div id="boxFilm5" class="boxFilm" *ngIf="showHideFilm5">
+              <a href="#"><img src="../assets/img/thumbnail5.png" alt="file"></a>
+            </div>
+          </span>
+        <div class="buttonBlock">
+          <button *ngIf="countGames < 15000">15 000</button>
+          <span *ngIf="countGames >= 15000">
+            <button id="firstFilm" class="buttonFilm" type="button" (click)="firstFilm()" [ngClass]="(showHideFilm == true)?'filmAcitve':''">&#10004;</button>
+          </span>
+          <button *ngIf="countGames < 25000">25 000</button>
+          <span *ngIf="countGames >= 25000">
+            <button id="secondFilm" class="buttonFilm" type="button" (click)="secondFilm()" [ngClass]="(showHideFilm2 == true)?'filmAcitve':''">&#10004;</button>
+          </span>
+          <button *ngIf="countGames < 50000">50 000</button>
+          <span *ngIf="countGames >= 50000">
+            <button id="thirdFilm" class="buttonFilm" type="button" (click)="thirdFilm()" [ngClass]="(showHideFilm3 == true)?'filmAcitve':''">&#10004;</button>
+          </span>
+          <button *ngIf="countGames < 80000">80 000</button>
+          <span *ngIf="countGames >= 80000">
+            <button id="fourthFilm" class="buttonFilm" type="button" (click)="fourthFilm()" [ngClass]="(showHideFilm4 == true)?'filmAcitve':''">&#10004;</button>
+          </span>
+          <button *ngIf="countGames < 120000">120 000</button>
+          <span *ngIf="countGames >= 120000">
+            <button id="fiveFilm" class="buttonFilm" type="button" (click)="fiveFilm()" [ngClass]="(showHideFilm5 == true)?'filmAcitve':''">&#10004;</button>
+          </span>
+        </div>
+      </div>
+    </div>
+</section>
+<footer>
+  <div class="container">
+    <p>Application created by Paweł Gogola</p>
+  </div>
+</footer>
+
+

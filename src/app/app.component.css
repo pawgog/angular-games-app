@@ -1,0 +1,415 @@
+@font-face { font-family: "Loopy"; src: url("../assets/fonts/loopy/LOOPY.ttf"); }
+
+/*main styles*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+hr {
+    width: 279px;
+    height: 1px;
+    background-color: #cdcdcd;
+}
+h1 {
+    font-family: "Open Sans";
+    font-size: 36px;
+    font-weight: 300;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    color: #404040;
+    line-height: 1.2;
+}
+p {
+    font-family: "Open Sans";
+    text-align: center;
+    color: #666666;
+}
+header {
+    width: 100%;
+    height: 180px;
+    background-image: -webkit-linear-gradient( top, rgba(212, 212, 212, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background-image: -moz-linear-gradient( top, rgba(212, 212, 212, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background-image: -o-linear-gradient( top, rgba(212, 212, 212, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background-image: linear-gradient(to top, rgba(212, 212, 212, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+footer {
+    position: relative;
+    float: left;
+    width: 100%;
+    top: 50px;
+    padding: 10px 0px 5px 0px;
+    z-index: -1;
+    display: block;
+    background-size: cover;
+    background-image: url('../assets/img/bottom.png');
+}
+
+/*navbar*/
+.navbarCustom {
+    width: 100%;
+    border: #b6b6b6;
+    background-color: #b6b6b6;
+}
+.navbar-nav>li:hover {
+    background-color: #8a8a8b;
+}
+.navbar-nav>.active>a {
+    background-color: #d6d5d5;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #555;
+    background-color: #8a8a8b;
+}
+.navbar-brand {
+    padding: 4px 15px 0px 15px;
+}
+.dropdown-menu {
+    background-color: #d6d5d5;
+}
+.btn-default {
+    color: #ffffff;
+    background-color: #575757;
+}
+.form-control, .form-control:focus {
+    border-color: #d6d5d5;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(214,213,213,.6);
+    background-color: #575757;
+}
+
+/*section 1 - main menu functions*/
+.gamesSoldTitle {
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 0.5;
+    color: #4d4d4d;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.gamesSoldTitle span {
+  display: inline-block;
+  position: relative;  
+}
+.gamesSoldTitle span:before,
+.gamesSoldTitle span:after {
+  content: "";
+  position: absolute;
+  width: 7vw;
+  height: 5px;
+  top: 5px;
+  border-top: 1px solid #4d4d4d;
+}
+.gamesSoldTitle span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.gamesSoldTitle span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+.payInfo {
+    margin-top: -8em;
+    text-align: center;
+}
+@media only screen and (min-width: 56em) {
+    .flex-container {
+        height: 8em;
+        display: -webkit-flex;
+        display: flex;
+    }
+}
+@media only screen and (max-width: 56em) {
+    .flex-container {
+        height: 12em;
+        display: -ms-grid;
+        display: grid;
+    }
+}
+.flex-container {
+    width: auto;
+}
+.flex-item {
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: center;
+    color: #333333;
+    width: 100%;
+    height: 15px;
+    margin: 10px;
+}
+#supportTXT:before {
+    content: url('../assets/img/heart.png');
+    padding-right: 10px;
+}
+#playTXT:before {
+    content: url('../assets/img/mouse.png');
+    padding-right: 10px;
+}
+#getTXT:before {
+    content: url('../assets/img/lock.png');
+    padding-right: 10px;
+}
+#timeTXT:before {
+    content: url('../assets/img/time.png');
+    padding-right: 10px;
+}
+
+/*section 2 - features of games*/
+.payGames {
+    padding: 2vh 12vh 0vh 12vh;
+}
+.payGamesContent {
+    background-size: cover;
+    background-image: url('../assets/img/content.png');
+}
+.payGamesBackground {
+    height: auto;
+    padding: 3% 2% 3% 2%;
+    background-size: cover;
+    background-image: url('../assets/img/games-layers.png');
+}
+@media only screen and (max-width: 69.375em) {
+    .divinityGame {
+        display: block;
+    }
+    #cross {
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 69.375em) {
+    .divinityGame {
+        width: 32%;
+        display: inline-block;
+    }
+    .divinityGame:nth-child(1), .divinityGame:nth-child(3) {
+        top: 12%;
+    }
+    #cross {
+        padding-top: 7vh;
+        position: absolute;
+        display: inline-block;
+    }
+}
+.divinityGame {
+    min-width: 20vw;
+    text-align: center;
+    position: relative;
+}
+.colorFilter {
+    cursor: pointer;
+}
+.greyFilter {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    pointer-events: none;
+}
+.gameText {
+    font-family: "Open Sans";
+    font-size: 14px;
+    line-height: 18px;
+    color: #666666;
+}
+.gameInfoText {
+    font-family: "Open Sans";
+    font-size: 14px;
+}
+.priceAbove {
+    color: #608000;
+}
+.priceAbove:before {
+    content: url('../assets/img/check.png');
+    padding-right: 10px;
+}
+.priceUnder {
+    color: #666666;
+}
+.priceUnder:before {
+    content: url('../assets/img/error.png');
+    padding-right: 10px;
+}
+
+/*section 3 - pay range*/
+.payRange {
+    clear: both;
+    padding: 0vh 12vh 2vh 12vh;
+}
+@media only screen and (max-width: 69.375em) {
+    .rangeContainer {
+        padding: 0vh 5vh 20vh 5vh;
+    }
+}
+@media only screen and (min-width: 69.375em) {
+    .rangeContainer {
+        padding: 0vh 20vh 20vh 20vh
+    }
+}
+.rangeContainer {
+    padding-top: 3%;
+    background-size: cover;
+    background-image: url('../assets/img/bottom.png');
+}
+.rangeSlider {
+    width: 100%;
+    position: relative;
+}
+
+.allRange {
+    font-family: "Open Sans";
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 10px;
+    color: #808080;
+    position: absolute;
+    top: 0px;
+}
+@media only screen and (max-width: 40em) {
+    .firstRange {
+        left: 3%;
+    }
+    .secondRange {
+        left: 22%;
+    }
+}
+@media only screen and (min-width: 40em) {
+    .firstRange {
+        left: 5%;
+    }
+    .secondRange {
+        left: 26%;
+    }
+}
+@media only screen and (min-width: 50em) {
+    .firstRange {
+        left: 9%;
+    }
+    .secondRange {
+        left: 30%;
+    }
+}
+@media only screen and (min-width: 87.5em) {
+    .firstRange {
+        left: 11%;
+    }
+    .secondRange {
+        left: 32%;
+    }
+}
+@media only screen and (min-width: 121.875em) {
+    .firstRange {
+        left: 12%;
+    }
+    .secondRange {
+        left: 33%;
+    }
+}
+.firstRange:after, .secondRange:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 26px;
+    left: 42%;
+    width: 0;
+    height: 0;
+    margin-left: -3px;
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 0 0 rgba(0, 0, 0, 0.38);
+    background-color: #000000;
+    border-top-color: #000000;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    z-index: 1000;
+}
+#checkout {
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 800;
+    color: #000000;
+    margin-left: 20px;
+    padding: 11px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0 0 rgba(0, 0, 0, 0.28), inset 0 0 0 rgba(255, 255, 255, 0.05);
+    background-image: -webkit-linear-gradient( top, #6c9600 0%, #6c9600 4%, #a6c500 100%);
+    background-image: -moz-linear-gradient( top, #6c9600 0%, #6c9600 4%, #a6c500 100%);
+    background-image: -o-linear-gradient( top, #6c9600 0%, #6c9600 4%, #a6c500 100%);
+    background-image: linear-gradient(to top, #6c9600 0%, #6c9600 4%, #a6c500 100%);
+}
+.addPrice {
+    padding-bottom: 50px;
+    font-family: "Open Sans";
+    color: #808080;
+}
+.addPrice input {
+    font-family: "Open Sans";
+    font-weight: 800;
+    color: #698c00;
+    padding-left: 15px;
+    width: 80px;
+    border-radius: 15px;
+    background-color: #c8c8c8;
+}
+
+/*section 4 - goodies available and games sold*/
+.gamesSold {
+    padding: 0% 4% 5%;
+}
+@media only screen and (max-width: 62.5em) {
+    .extraInfo {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 62.5em) {
+    .extraInfo {
+        width: 25%;
+        margin-left: 5%;
+    }
+}
+.extraInfo {
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+}
+.countNumber {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    padding-top: 10px;
+    bottom: 21px;
+    font-family: 'Loopy';
+    letter-spacing: 15px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85), inset 0 0 2px rgba(0, 0, 0, 0.3);
+    background-color: #595959;
+    background-image: -webkit-linear-gradient(bottom, #bfbfbf 0%, #a6a6a6 100%);
+    background-image: -moz-linear-gradient(bottom, #bfbfbf 0%, #a6a6a6 100%);
+    background-image: -o-linear-gradient(bottom, #bfbfbf 0%, #a6a6a6 100%);
+    background-image: linear-gradient(to top, #bfbfbf 0%, #a6a6a6 100%);
+}
+.boxFilm {
+    position: relative;
+    margin-top: -154px;
+}
+.accessImg {
+    position: relative;
+    margin: 0 auto;
+    width: 268px;
+    height: 154px;
+    background-image: url(../assets/img/thumbnail0.png);
+    text-align: center;
+}
+.filePercent {
+    position: relative;
+    top: 55px;
+    font-size: 35px;
+    font-weight: 900;
+    color: #ffffff;
+}
+.filmAcitve {
+    background-color: #bbbaba;
+}
